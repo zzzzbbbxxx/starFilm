@@ -23,6 +23,12 @@ public class User {
 
     private Integer postcode;
 
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", username=" + username + ", nickname="
+                + nickname + "]";
+    }
+
     public Integer getId() {
         return id;
     }

@@ -19,6 +19,13 @@ public class Membercard {
 
     private Date limittime;
 
+    
+    @Override
+    public String toString() {
+        return "Membercard [id=" + id + ", userid=" + userid + ", money="
+                + money + ", credits=" + credits + "]";
+    }
+
     public Integer getId() {
         return id;
     }

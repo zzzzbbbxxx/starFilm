@@ -10,6 +10,11 @@ public class Message {
     private Date createtime;
 
     private String title;
+    
+    @Override
+    public String toString() {
+        return "Message [id=" + id + ", title=" + title + "]";
+    }
 
     public Integer getId() {
         return id;
