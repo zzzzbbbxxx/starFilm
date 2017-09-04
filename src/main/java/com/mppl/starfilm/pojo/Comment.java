@@ -9,7 +9,7 @@ public class Comment {
 
     private String content;
 
-    private Float start;
+    private Float star;
 
     public Integer getId() {
         return id;
@@ -43,11 +43,11 @@ public class Comment {
         this.content = content == null ? null : content.trim();
     }
 
-    public Float getStart() {
-        return start;
+    public Float getStar() {
+        return star;
     }
 
-    public void setStart(Float start) {
-        this.start = start;
+    public void setStar(Float star) {
+        this.star = star;
     }
 }

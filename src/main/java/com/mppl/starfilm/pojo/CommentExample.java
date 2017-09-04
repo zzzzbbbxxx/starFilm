@@ -354,63 +354,63 @@ public class CommentExample {
             return (Criteria) this;
         }
 
-        public Criteria andStartIsNull() {
-            addCriterion("start is null");
+        public Criteria andStarIsNull() {
+            addCriterion("star is null");
             return (Criteria) this;
         }
 
-        public Criteria andStartIsNotNull() {
-            addCriterion("start is not null");
+        public Criteria andStarIsNotNull() {
+            addCriterion("star is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStartEqualTo(Float value) {
-            addCriterion("start =", value, "start");
+        public Criteria andStarEqualTo(Float value) {
+            addCriterion("star =", value, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartNotEqualTo(Float value) {
-            addCriterion("start <>", value, "start");
+        public Criteria andStarNotEqualTo(Float value) {
+            addCriterion("star <>", value, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartGreaterThan(Float value) {
-            addCriterion("start >", value, "start");
+        public Criteria andStarGreaterThan(Float value) {
+            addCriterion("star >", value, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartGreaterThanOrEqualTo(Float value) {
-            addCriterion("start >=", value, "start");
+        public Criteria andStarGreaterThanOrEqualTo(Float value) {
+            addCriterion("star >=", value, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartLessThan(Float value) {
-            addCriterion("start <", value, "start");
+        public Criteria andStarLessThan(Float value) {
+            addCriterion("star <", value, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartLessThanOrEqualTo(Float value) {
-            addCriterion("start <=", value, "start");
+        public Criteria andStarLessThanOrEqualTo(Float value) {
+            addCriterion("star <=", value, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartIn(List<Float> values) {
-            addCriterion("start in", values, "start");
+        public Criteria andStarIn(List<Float> values) {
+            addCriterion("star in", values, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartNotIn(List<Float> values) {
-            addCriterion("start not in", values, "start");
+        public Criteria andStarNotIn(List<Float> values) {
+            addCriterion("star not in", values, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartBetween(Float value1, Float value2) {
-            addCriterion("start between", value1, value2, "start");
+        public Criteria andStarBetween(Float value1, Float value2) {
+            addCriterion("star between", value1, value2, "star");
             return (Criteria) this;
         }
 
-        public Criteria andStartNotBetween(Float value1, Float value2) {
-            addCriterion("start not between", value1, value2, "start");
+        public Criteria andStarNotBetween(Float value1, Float value2) {
+            addCriterion("star not between", value1, value2, "star");
             return (Criteria) this;
         }
     }

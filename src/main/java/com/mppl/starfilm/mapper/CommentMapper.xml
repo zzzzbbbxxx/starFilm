@@ -6,7 +6,7 @@
     <result column="userId" property="userid" jdbcType="INTEGER" />
     <result column="movieId" property="movieid" jdbcType="INTEGER" />
     <result column="content" property="content" jdbcType="VARCHAR" />
-    <result column="start" property="start" jdbcType="REAL" />
+    <result column="star" property="star" jdbcType="REAL" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, userId, movieId, content, start
+    id, userId, movieId, content, star
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zbx.generator.po.CommentExample" >
     select
@@ -91,9 +91,9 @@
   </delete>
   <insert id="insert" parameterType="cn.zbx.generator.po.Comment" >
     insert into comment (id, userId, movieId, 
-      content, start)
+      content, star)
     values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{movieid,jdbcType=INTEGER}, 
-      #{content,jdbcType=VARCHAR}, #{start,jdbcType=REAL})
+      #{content,jdbcType=VARCHAR}, #{star,jdbcType=REAL})
   </insert>
   <insert id="insertSelective" parameterType="cn.zbx.generator.po.Comment" >
     insert into comment
@@ -110,8 +110,8 @@
       <if test="content != null" >
         content,
       </if>
-      <if test="start != null" >
-        start,
+      <if test="star != null" >
+        star,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -127,8 +127,8 @@
       <if test="content != null" >
         #{content,jdbcType=VARCHAR},
       </if>
-      <if test="start != null" >
-        #{start,jdbcType=REAL},
+      <if test="star != null" >
+        #{star,jdbcType=REAL},
       </if>
     </trim>
   </insert>
@@ -153,8 +153,8 @@
       <if test="record.content != null" >
         content = #{record.content,jdbcType=VARCHAR},
       </if>
-      <if test="record.start != null" >
-        start = #{record.start,jdbcType=REAL},
+      <if test="record.star != null" >
+        star = #{record.star,jdbcType=REAL},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -167,7 +167,7 @@
       userId = #{record.userid,jdbcType=INTEGER},
       movieId = #{record.movieid,jdbcType=INTEGER},
       content = #{record.content,jdbcType=VARCHAR},
-      start = #{record.start,jdbcType=REAL}
+      star = #{record.star,jdbcType=REAL}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
