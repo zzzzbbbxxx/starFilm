@@ -2,7 +2,7 @@ package com.mppl.starfilm.pojo;
 
 import java.util.Date;
 
-public class TUser {
+public class User {
     private Integer id;
 
     private String username;

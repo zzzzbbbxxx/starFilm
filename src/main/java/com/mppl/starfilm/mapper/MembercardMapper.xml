@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.mppl.starfilm.mapper.TMembercardMapper" >
-  <resultMap id="BaseResultMap" type="com.mppl.starfilm.pojo.TMembercard" >
+<mapper namespace="cn.zbx.generator.mapper.MembercardMapper" >
+  <resultMap id="BaseResultMap" type="cn.zbx.generator.po.Membercard" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="userId" property="userid" jdbcType="INTEGER" />
     <result column="cinemaId" property="cinemaid" jdbcType="INTEGER" />
@@ -72,13 +72,13 @@
   <sql id="Base_Column_List" >
     id, userId, cinemaId, createTime, money, enable, credits, limitTime
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mppl.starfilm.pojo.TMembercardExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zbx.generator.po.MembercardExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from t_membercard
+    from membercard
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,22 +86,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.mppl.starfilm.pojo.TMembercardExample" >
-    delete from t_membercard
+  <delete id="deleteByExample" parameterType="cn.zbx.generator.po.MembercardExample" >
+    delete from membercard
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.mppl.starfilm.pojo.TMembercard" >
-    insert into t_membercard (id, userId, cinemaId, 
+  <insert id="insert" parameterType="cn.zbx.generator.po.Membercard" >
+    insert into membercard (id, userId, cinemaId, 
       createTime, money, enable, 
       credits, limitTime)
     values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{cinemaid,jdbcType=INTEGER}, 
       #{createtime,jdbcType=DATE}, #{money,jdbcType=REAL}, #{enable,jdbcType=INTEGER}, 
       #{credits,jdbcType=INTEGER}, #{limittime,jdbcType=DATE})
   </insert>
-  <insert id="insertSelective" parameterType="com.mppl.starfilm.pojo.TMembercard" >
-    insert into t_membercard
+  <insert id="insertSelective" parameterType="cn.zbx.generator.po.Membercard" >
+    insert into membercard
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -155,14 +155,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.mppl.starfilm.pojo.TMembercardExample" resultType="java.lang.Integer" >
-    select count(*) from t_membercard
+  <select id="countByExample" parameterType="cn.zbx.generator.po.MembercardExample" resultType="java.lang.Integer" >
+    select count(*) from membercard
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update t_membercard
+    update membercard
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
@@ -194,7 +194,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update t_membercard
+    update membercard
     set id = #{record.id,jdbcType=INTEGER},
       userId = #{record.userid,jdbcType=INTEGER},
       cinemaId = #{record.cinemaid,jdbcType=INTEGER},

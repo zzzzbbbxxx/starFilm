@@ -1,6 +1,6 @@
 package com.mppl.starfilm.pojo;
 
-public class TComment {
+public class Comment {
     private Integer id;
 
     private Integer userid;

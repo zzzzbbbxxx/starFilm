@@ -2,7 +2,7 @@ package com.mppl.starfilm.pojo;
 
 import java.util.Date;
 
-public class TUsersafe {
+public class Usersafe {
     private Integer id;
 
     private Integer userid;

@@ -3,14 +3,14 @@ package com.mppl.starfilm.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TCommentExample {
+public class CommentExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TCommentExample() {
+    public CommentExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
