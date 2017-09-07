@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.zbx.generator.mapper.CommentMapper" >
-  <resultMap id="BaseResultMap" type="cn.zbx.generator.po.Comment" >
+<mapper namespace="com.mppl.starfilm.mapper.CommentMapper" >
+  <resultMap id="BaseResultMap" type="com.mppl.starfilm.pojo.Comment" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="userId" property="userid" jdbcType="INTEGER" />
     <result column="movieId" property="movieid" jdbcType="INTEGER" />
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List" >
     id, userId, movieId, content, star
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zbx.generator.po.CommentExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mppl.starfilm.pojo.CommentExample" >
     select
     <if test="distinct" >
       distinct
@@ -83,19 +83,19 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="cn.zbx.generator.po.CommentExample" >
+  <delete id="deleteByExample" parameterType="com.mppl.starfilm.pojo.CommentExample" >
     delete from comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.zbx.generator.po.Comment" >
+  <insert id="insert" parameterType="com.mppl.starfilm.pojo.Comment" >
     insert into comment (id, userId, movieId, 
       content, star)
     values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{movieid,jdbcType=INTEGER}, 
       #{content,jdbcType=VARCHAR}, #{star,jdbcType=REAL})
   </insert>
-  <insert id="insertSelective" parameterType="cn.zbx.generator.po.Comment" >
+  <insert id="insertSelective" parameterType="com.mppl.starfilm.pojo.Comment" >
     insert into comment
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -132,7 +132,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.zbx.generator.po.CommentExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.mppl.starfilm.pojo.CommentExample" resultType="java.lang.Integer" >
     select count(*) from comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

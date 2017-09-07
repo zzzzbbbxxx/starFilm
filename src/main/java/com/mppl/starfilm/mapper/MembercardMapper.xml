@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.zbx.generator.mapper.MembercardMapper" >
-  <resultMap id="BaseResultMap" type="cn.zbx.generator.po.Membercard" >
+<mapper namespace="com.mppl.starfilm.mapper.MembercardMapper" >
+  <resultMap id="BaseResultMap" type="com.mppl.starfilm.pojo.Membercard" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="userId" property="userid" jdbcType="INTEGER" />
     <result column="cinemaId" property="cinemaid" jdbcType="INTEGER" />
@@ -72,7 +72,7 @@
   <sql id="Base_Column_List" >
     id, userId, cinemaId, createTime, money, enable, credits, limitTime
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zbx.generator.po.MembercardExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mppl.starfilm.pojo.MembercardExample" >
     select
     <if test="distinct" >
       distinct
@@ -86,13 +86,13 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="cn.zbx.generator.po.MembercardExample" >
+  <delete id="deleteByExample" parameterType="com.mppl.starfilm.pojo.MembercardExample" >
     delete from membercard
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.zbx.generator.po.Membercard" >
+  <insert id="insert" parameterType="com.mppl.starfilm.pojo.Membercard" >
     insert into membercard (id, userId, cinemaId, 
       createTime, money, enable, 
       credits, limitTime)
@@ -100,7 +100,7 @@
       #{createtime,jdbcType=DATE}, #{money,jdbcType=REAL}, #{enable,jdbcType=INTEGER}, 
       #{credits,jdbcType=INTEGER}, #{limittime,jdbcType=DATE})
   </insert>
-  <insert id="insertSelective" parameterType="cn.zbx.generator.po.Membercard" >
+  <insert id="insertSelective" parameterType="com.mppl.starfilm.pojo.Membercard" >
     insert into membercard
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -155,7 +155,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.zbx.generator.po.MembercardExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.mppl.starfilm.pojo.MembercardExample" resultType="java.lang.Integer" >
     select count(*) from membercard
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

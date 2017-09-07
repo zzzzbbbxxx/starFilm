@@ -11,13 +11,7 @@ public class Usersafe {
 
     private Date posttime;
 
-    private String catpcha;//验证码
-
-    @Override
-    public String toString() {
-        return "Usersafe [id=" + id + ", email=" + email + ", catpcha="
-                + catpcha + "]";
-    }
+    private String catpcha;
 
     public Integer getId() {
         return id;

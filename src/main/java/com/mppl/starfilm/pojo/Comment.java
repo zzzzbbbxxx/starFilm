@@ -11,12 +11,6 @@ public class Comment {
 
     private Float star;
 
-    @Override
-    public String toString() {
-        return "Comment [id=" + id + ", content=" + content + ", star=" + star
-                + "]";
-    }
-
     public Integer getId() {
         return id;
     }

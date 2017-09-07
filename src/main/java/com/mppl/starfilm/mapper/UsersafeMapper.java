@@ -1,11 +1,9 @@
 package com.mppl.starfilm.mapper;
 
-import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
-
 import com.mppl.starfilm.pojo.Usersafe;
 import com.mppl.starfilm.pojo.UsersafeExample;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface UsersafeMapper {
     int countByExample(UsersafeExample example);
