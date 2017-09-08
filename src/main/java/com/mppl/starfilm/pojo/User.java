@@ -22,6 +22,16 @@ public class User {
     private String idcard;
 
     private Integer postcode;
+    
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
 
     public Integer getId() {
         return id;

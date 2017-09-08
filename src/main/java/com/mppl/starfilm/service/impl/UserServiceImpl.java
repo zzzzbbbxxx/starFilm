@@ -10,12 +10,13 @@ import com.mppl.starfilm.pojo.User;
 import com.mppl.starfilm.pojo.UserExample;
 import com.mppl.starfilm.pojo.UserExample.Criteria;
 import com.mppl.starfilm.service.IUserService;
-import javax.annotation.Resource;
+import com.mppl.starfilm.util.MD5Util;
+
 
 @Service
 public class UserServiceImpl implements IUserService{
 
-    @Resource
+    @Autowired
     UserMapper userMapper;
     
     UserExample example = new UserExample();
@@ -24,7 +25,8 @@ public class UserServiceImpl implements IUserService{
         
         Criteria criteria = example.createCriteria();
         criteria.andUsernameEqualTo(user.getUsername());
-        criteria.andPasswordEqualTo(user.getPassword());
+        //MD5加密
+        criteria.andPasswordEqualTo(MD5Util.md5(user.getPassword()));
         if (userMapper.countByExample(example) > 0) {
             return true;
         }
@@ -32,7 +34,8 @@ public class UserServiceImpl implements IUserService{
     }
 
     public boolean registry(User user) {
-        
+        //MD5加密
+        user.setPassword(MD5Util.md5(user.getPassword()));
         if (userMapper.insert(user) > 0) {
             return true;
         }
