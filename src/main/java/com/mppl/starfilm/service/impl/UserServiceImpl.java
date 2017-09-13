@@ -17,12 +17,11 @@ import com.mppl.starfilm.util.MD5Util;
 public class UserServiceImpl implements IUserService{
 
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapper;
     
-    UserExample example = new UserExample();
-
     public boolean login(User user) {
-        
+        //这个变量一定要是局部变量，重新实例一次
+        UserExample example = new UserExample();
         Criteria criteria = example.createCriteria();
         criteria.andUsernameEqualTo(user.getUsername());
         //MD5加密
@@ -51,6 +50,7 @@ public class UserServiceImpl implements IUserService{
     }
 
     public User findUserByUserName(String userName) {
+        UserExample example = new UserExample();
         Criteria criteria = example.createCriteria();
         criteria.andUsernameEqualTo(userName);
         List<User> userList = userMapper.selectByExample(example);
@@ -62,6 +62,7 @@ public class UserServiceImpl implements IUserService{
     }
 
     public User findUserById(Integer id) {
+        UserExample example = new UserExample();
         Criteria criteria = example.createCriteria();
         criteria.andIdEqualTo(id);
         List<User> userList = userMapper.selectByExample(example);

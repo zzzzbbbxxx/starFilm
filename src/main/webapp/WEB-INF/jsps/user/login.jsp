@@ -43,6 +43,7 @@
 			<!--/*登录*/-->
 			<div class="login_left">
 				<h1>欢迎加入星星国际电影城电影网</h1>
+				<form action="login.do" method="post">
 				<table cellpadding="0" cellspacing="0" border="0"
 					class="login_table">
 					<tr>
@@ -56,10 +57,8 @@
 					<tr>
 						<td class="w">登录密码：</td>
 						<td><div class="password">
-								<input class="text" type="password" value="登陆密码"
-									onblur="if(this.value=='')this.value='登陆密码';"
-									onfocus="this.value='';" />
-									
+								<input class="text" type="text" value="输入登录密码"
+								name="password" />
 									<a class="Keyboard" href="#" title="键盘输入"></a>
 							</div></td>
 					</tr>
@@ -67,22 +66,26 @@
 						<td class="w">验证码：</td>
 						<td><input class="text" type="text" value=" 输入验证码"
 							onblur="if(this.value=='')this.value=' 输入验证码';"
-							onfocus="this.value='';" /><img src="${pageContext.request.contextPath }/images/code.jpg"
+							onfocus="this.value='';" id="code"/><img src="${pageContext.request.contextPath }/images/code.jpg"
 							class="code" /></td>
 					</tr>
 					<tr>
 						<td class="w"></td>
 						<td><input type="checkbox" checked="checked" />下次自动登陆
 							<p>
-								<a href="user/findPassword.do">找回密码？</a>
+								<a href="findPassword.do">找回密码？</a>
 							</p></td>
 					</tr>
 					<tr>
 						<td class="w"></td>
-						<td><input type="button" class="btn" value="立即登录"
-							onclick="location.href='会员中心_我的资料.html';return false;" /></td>
+						<td><input type="button" class="btn" value="立即登录"/></td>
+					</tr>
+					<tr>
+						<td class="w"></td>
+						<td><font color="red">${loginMessage}</font></td>
 					</tr>
 				</table>
+				</form>
 			</div>
 			<div class="login_right">
 				客服热线：<b>400-888-8888</b>
@@ -98,9 +101,31 @@
 	<script type="text/javascript">
 		jQuery(".bottom_help").css("margin-top", "0");
 		
+		$(".password input").focus(function() {
+			$(".password input").val("");
+			$(".password input").attr("type","password");
+		});
 		
+		$(".password input").blur(function() {
+			if($(".password input").val() == ""){
+			$(".password input").val("输入登录密码");
+			$(".password input").attr("type","text");
+			}
+		});
 		
+		$(".btn").click(function(){
+			if ($(".name input").val() == "输入用户名") {
+				alert("请输入用户名!");
+			} else if ($(".password input").val() == "输入登录密码") {
+				alert("请输入登录密码!");
+			} else if ($("#code").val() != "FRES") {
+				alert("验证码不正确!");
+			} else {
+				$("form").submit();
+			}
+		});
 		
+		//TODO 下次自动登录功能的实现		
 	</script>
 </body>
 </html>
