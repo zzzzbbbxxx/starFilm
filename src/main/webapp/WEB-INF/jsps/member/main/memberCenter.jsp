@@ -5,15 +5,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=7" />
 <meta name="" content="" />
-<link href="${pageContext.request.contextPath }/css/css_whir.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
+<link href="${pageContext.request.contextPath }/css/css_whir.css"
+	rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" language="javascript">
 	var m = '0'
 	var side = '01'
 </script>
 </head>
-		<frameset cols="25%,75%">
-			<frame src="member/member_left.do" />
-			<frame src="member/member_center.do" />
-		</frameset>
+	<frameset cols="25%,75%" style="width:990px; margin:0 auto; padding-top:15px">
+		<frame 
+			src="${pageContext.request.contextPath }/member/member_left.do"  />
+		<frame 
+			src="${pageContext.request.contextPath }/member/member_center.do" />
+	</frameset>
 </html>
